@@ -1,0 +1,15 @@
+{
+    "name": "jpcaparas/box-laravel",
+    "description": "A service provider for the Box v2.0 SDK",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JP Caparas",
+            "email": "jp@jpcaparas.com"
+        }
+    ],
+    "require": {
+        "chancegarcia/box-api-v2-sdk": "~0.4"
+    }
+}
