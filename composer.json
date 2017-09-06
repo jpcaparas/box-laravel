@@ -18,9 +18,15 @@
         "php": ">=7.0.0",
         "illuminate/container": "~5.4.0|~5.5.0",
         "illuminate/support": "~5.4.0|~5.5.0",
-        "linkstreet/box-sdk": "~0.2",
+        "linkstreet/box-sdk": "dev-develop",
         "symfony/http-foundation": "^3.3"
     },
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/jpcaparas/box-sdk"
+      }
+    ],
     "config": {
         "sort-packages": true
     }

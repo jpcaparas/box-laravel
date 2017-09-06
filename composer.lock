@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5e0f9557e99437a00d1af223b31ba65",
+    "content-hash": "21e5d8fcefa1556aae3911389757e5fe",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -444,16 +444,16 @@
         },
         {
             "name": "linkstreet/box-sdk",
-            "version": "v0.2.2",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
-                "url": "https://github.com/linkstreet/box-sdk.git",
-                "reference": "a370f86628601d6141c4a75168c5d0672fbeead0"
+                "url": "https://github.com/jpcaparas/box-sdk.git",
+                "reference": "f8b84277c2c313d2972f1e4f408d0afc6b2fbe1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linkstreet/box-sdk/zipball/a370f86628601d6141c4a75168c5d0672fbeead0",
-                "reference": "a370f86628601d6141c4a75168c5d0672fbeead0",
+                "url": "https://api.github.com/repos/jpcaparas/box-sdk/zipball/f8b84277c2c313d2972f1e4f408d0afc6b2fbe1e",
+                "reference": "f8b84277c2c313d2972f1e4f408d0afc6b2fbe1e",
                 "shasum": ""
             },
             "require": {
@@ -472,7 +472,6 @@
                     "Linkstreet\\Box\\": "src\\Box\\"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -483,7 +482,10 @@
                 }
             ],
             "description": "v2 Box sdk for php",
-            "time": "2017-01-30T11:43:54+00:00"
+            "support": {
+                "source": "https://github.com/jpcaparas/box-sdk/tree/develop"
+            },
+            "time": "2017-09-06 06:08:09"
         },
         {
             "name": "nesbot/carbon",
@@ -916,7 +918,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "linkstreet/box-sdk": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
