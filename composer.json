@@ -1,6 +1,6 @@
 {
     "name": "jpcaparas/box-laravel",
-    "description": "A service provider for the Box v2.0 SDK",
+    "description": "A service provider for the Box v2 SDK.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,7 +9,19 @@
             "email": "jp@jpcaparas.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "JPCaparas\\Box\\": "/src"
+        }
+    },
     "require": {
-        "chancegarcia/box-api-v2-sdk": "~0.4"
+        "php": ">=7.0.0",
+        "illuminate/container": "~5.4.0|~5.5.0",
+        "illuminate/support": "~5.4.0|~5.5.0",
+        "linkstreet/box-sdk": "~0.2",
+        "symfony/http-foundation": "^3.3"
+    },
+    "config": {
+        "sort-packages": true
     }
 }
