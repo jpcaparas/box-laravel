@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "21e5d8fcefa1556aae3911389757e5fe",
+    "content-hash": "efb765a7c2fad4f0bda52b973e75eb6f",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -443,17 +443,17 @@
             "time": "2017-09-04T14:00:07+00:00"
         },
         {
-            "name": "linkstreet/box-sdk",
-            "version": "dev-develop",
+            "name": "jpcaparas/box-sdk",
+            "version": "v0.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jpcaparas/box-sdk.git",
-                "reference": "f8b84277c2c313d2972f1e4f408d0afc6b2fbe1e"
+                "reference": "7df5574c2648f3a9f5aaa84b34e3f60f65a2aa88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jpcaparas/box-sdk/zipball/f8b84277c2c313d2972f1e4f408d0afc6b2fbe1e",
-                "reference": "f8b84277c2c313d2972f1e4f408d0afc6b2fbe1e",
+                "url": "https://api.github.com/repos/jpcaparas/box-sdk/zipball/7df5574c2648f3a9f5aaa84b34e3f60f65a2aa88",
+                "reference": "7df5574c2648f3a9f5aaa84b34e3f60f65a2aa88",
                 "shasum": ""
             },
             "require": {
@@ -472,6 +472,7 @@
                     "Linkstreet\\Box\\": "src\\Box\\"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -479,13 +480,14 @@
                 {
                     "name": "Cerlin",
                     "email": "cerlin@linkstreet.in"
+                },
+                {
+                    "name": "JP Caparas",
+                    "email": "jp@jpcaparas.com"
                 }
             ],
             "description": "v2 Box sdk for php",
-            "support": {
-                "source": "https://github.com/jpcaparas/box-sdk/tree/develop"
-            },
-            "time": "2017-09-06 06:08:09"
+            "time": "2017-09-07T01:26:15+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -918,9 +920,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "linkstreet/box-sdk": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
