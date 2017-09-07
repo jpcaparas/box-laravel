@@ -2,6 +2,7 @@
 
 namespace JPCaparas\Box;
 
+use JPCaparas\Box\Services\AuthService;
 use JPCaparas\Box\Services\FileService;
 use Linkstreet\Box\Auth\AppAuth;
 use Linkstreet\Box\Box as BoxBase;
@@ -19,7 +20,7 @@ class Box
     private $config;
 
     /**
-     * @var BoxBase
+     * @var AppAuth
      */
     private $client;
 
@@ -27,6 +28,11 @@ class Box
      * @var FileService
      */
     private $fileService;
+
+    /**
+     * @var AuthService
+     */
+    private $authService;
 
     /**
      * BoxService constructor.
@@ -60,6 +66,18 @@ class Box
      */
     protected function getClient(): AppAuth
     {
+        return $this->client;
+    }
+
+    protected function setClient()
+    {
+        $config = $this->getConfig();
+
+        $client = new BoxBase([
+            'client_id'     => $config->getApiKey(),
+            'client_secret' => $config->getApiSecret()
+        ]);
+
         $config = $this->getConfig();
 
         $authInfo = [
@@ -70,16 +88,7 @@ class Box
             'id'                => $config->getAppId(),
         ];
 
-        return $this->client->getAppAuthClient($authInfo);
-    }
-
-    protected function setClient()
-    {
-        $config = $this->getConfig();
-        $this->client = new BoxBase([
-            'client_id'     => $config->getApiKey(),
-            'client_secret' => $config->getApiSecret()
-        ]);
+        $this->client = $client->getAppAuthClient($authInfo);
     }
 
     public function file(): FileService
@@ -89,5 +98,14 @@ class Box
         }
 
         return $this->fileService;
+    }
+
+    public function auth(): AuthService
+    {
+        if (is_null($this->authService) === true) {
+            $this->authService = new AuthService($this->getClient());
+        }
+
+        return $this->authService;
     }
 }
