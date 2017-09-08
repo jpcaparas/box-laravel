@@ -17,6 +17,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=7.0.0",
+        "beberlei/assert": "^2.7",
         "illuminate/container": "~5.4.0|~5.5.0",
         "illuminate/support": "~5.4.0|~5.5.0",
         "jpcaparas/box-sdk": "~0.2.4",
