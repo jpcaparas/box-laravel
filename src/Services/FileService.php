@@ -76,16 +76,55 @@ class FileService extends BaseService
      *
      * @return int
      */
-    public function upload(File $file, string $fileName = null, int $folderId = null)
+    public function upload(File $file, string $fileName = null, int $folderId = 0)
     {
         $fileName = $fileName ?? $file->getFilename();
-        $folderId = $folderId ?? 0;
 
         $response = $this->fileService->upload($file, $folderId, $fileName);
 
         $this->setLastResponse($response);
 
-        return (int)$this->getLastResponse()['entries'][0]['id'];
+        return (int) $this->getLastResponse()['entries'][0]['id'];
+    }
+
+    /**
+     * @param int|string      $fileId
+     *
+     * @return File
+     */
+    public function download($fileId)
+    {
+        $response = $this->fileService->download($fileId);
+
+        return $response->getBody()->getContents();
+    }
+
+    /**
+     * @param int|string      $fileId
+     * @param int             $width
+     * @param int             $height
+     *
+     * @return File
+     */
+    public function downloadThumbnail($fileId, int $width = 320, int $height = 320)
+    {
+        $response = $this->fileService->downloadThumbnail($fileId, $width, $height);
+
+        return $response->getBody()->getContents();
+    }
+
+    /**
+     * @param int|string      $fileId
+     *
+     * @return array
+     */
+    public function getFileInfo($fileId)
+    {
+        $response = $this->fileService->getFileInfo($fileId);
+
+        $this->setLastResponse($response);
+
+        return $this->getLastResponse();
     }
 
     /**
@@ -173,7 +212,7 @@ class FileService extends BaseService
      *
      * @return String
      */
-    public function embedUrl(int $fileId)
+    public function embedUrl($fileId)
     {
         $response = $this->fileService->getEmbedUrl($fileId);
 
@@ -187,7 +226,7 @@ class FileService extends BaseService
      *
      * @return bool
      */
-    public function delete(int $fileId)
+    public function delete($fileId)
     {
         /**
          * @var Response $response
